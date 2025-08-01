@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/style.css")
+  body
+    h1= title
+    h2 Weather: #{weather.condition}, #{weather.temp_c}°C
+    p Suggestion: #{suggestions}
+
+    .gallery
+      each item in art
+        .art-card
+          if item.image
+            img(src=item.image, alt=item.title)
+          h3= item.title
+          p by #{item.artist}

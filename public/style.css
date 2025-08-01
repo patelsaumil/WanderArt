@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #f0f4ff, #eaf0ff);
+  color: #2d2d2d;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #304ffe;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #3949ab;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem auto;
+}
+
+input[type="text"] {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #c5cae9;
+  border-radius: 6px;
+  width: 280px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: #3f51b5;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  background-color: #1a237e;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #303f9f;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  padding: 0 1rem;
+}
+
+.art-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(48, 63, 159, 0.15);
+  padding: 1.25rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.art-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(48, 63, 159, 0.2);
+}
+
+.art-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  max-height: 300px;
+}
+
+.art-card h3 {
+  font-size: 1.1rem;
+  color: #1a237e;
+  margin-bottom: 0.5rem;
+}
+
+.art-card p {
+  font-size: 0.9rem;
+  color: #616161;
+}
