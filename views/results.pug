@@ -3,15 +3,45 @@ html
   head
     title= title
     link(rel="stylesheet", href="/style.css")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js")
   body
-    h1= title
-    h2 Weather: #{weather.condition}, #{weather.temp_c}°C
-    p Suggestion: #{suggestions}
+    header.results-header
+      h1= title
+      h2 Weather: #{weather.condition}, #{weather.temp_c}°C
+      p Suggestion: #{suggestions}
+      a.back-button(href="/") Back to Home
 
     .gallery
       each item in art
-        .art-card
-          if item.image
-            img(src=item.image, alt=item.title)
+        .art-card(
+          data-title=item.title 
+          data-artist=item.artist 
+          data-img=item.image
+        )
+          img(src=item.image, alt=item.title)
           h3= item.title
           p by #{item.artist}
+
+    // Fullscreen Card View
+    .fullscreen-card#fullscreenCard
+      .card-content
+        button.close-btn(type="button") ×
+        img#fullscreenImage
+        h2#fullscreenTitle
+        p#fullscreenArtist
+
+    script.
+      $(document).ready(function(){
+        $('.art-card').on('click', function(){
+          $('#fullscreenImage').attr('src', $(this).data('img'));
+          $('#fullscreenTitle').text($(this).data('title'));
+          $('#fullscreenArtist').text("by " + $(this).data('artist'));
+          $('#fullscreenCard').fadeIn();
+        });
+        $('.close-btn').on('click', function(){
+          $('#fullscreenCard').fadeOut();
+        });
+        $(document).on('keyup', function(e){
+          if (e.key === "Escape") $('#fullscreenCard').fadeOut();
+        });
+      });

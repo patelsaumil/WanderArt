@@ -4,7 +4,9 @@ html
     title= title
     link(rel="stylesheet", href="/style.css")
   body
-    h1 WanderArt — Plan Your Cultural Journey
-    form(method="POST", action="/results")
-      input(type="text", name="city", placeholder="Enter a city", required)
-      button(type="submit") Explore Art
+    .home
+      h1 WanderArt
+      p Discover art & culture experiences tailored to the weather
+      form(method="POST", action="/results")
+        input(type="text", name="city", placeholder="Enter a city", required)
+        button(type="submit") Explore Art
